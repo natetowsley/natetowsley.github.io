@@ -147,5 +147,7 @@ tr {
 
 .allFooter {
     text-align: center;
+    font-size: 12px;
     padding:30px;
+    color:darkgray;
 }
