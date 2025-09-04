@@ -1,7 +1,10 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 h1 {
     background-color: #31456b;
     color:white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align:center;
     margin: 0 auto;
 }
@@ -9,9 +12,12 @@ h1 {
 h3{ 
     background-color: #6b92b6;
     color:#31456b;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0px 0px 4px white;
     text-align:center;
     margin: 0 auto;
+    border-radius:10px;
+    width:fit-content;
+    padding: 10px;
 }
 
 hr {
@@ -20,15 +26,22 @@ hr {
     background-color: #6b92b6;
 }
 
+#currentPage {
+    box-shadow: 5px 4px 2px black;
+    text-shadow: 1px 1px 2px black;
+    background-color: white;
+    color:#31456b;
+}
+
 nav {
     text-align: center;
     margin: 25px;
+    padding: 10px;
 }
 
 a {
     color: #FFFFFF;
     text-shadow: 3px 2px 2px black;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     background-color: #6b92b6;
     border-style:solid;
@@ -53,7 +66,23 @@ a:hover {
     flex-wrap:wrap;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.nameplate {
     text-align: center;
+    text-shadow: 3px 2px 2px black;
+    background-color: #31456b;
+    color:white;
+    margin: 0 auto;
+    width:max-content;
+    border:solid;
+    border-width: 3px;
+    border-color:#31456b;
+    padding:10px;
+    border-radius: 30px;
 }
 
 .headshot {
@@ -66,10 +95,26 @@ a:hover {
 
 .thanks {
     text-align: center;
+    color:#31456b;
+    text-decoration: underline;
+    padding-bottom: 80px;
+    font-size: 24px;
 }
 
 .quote {
+    margin:0 auto;
+    margin-top:50px;
+    margin-bottom:50px;
     text-align:center;
+    border:solid;
+    border-width: 4px;
+    border-radius: 30px;
+    background-color: #6b92b6;
+    color:#FFFFFF;
+    text-shadow: 3px 2px 2px black;
+    border-color:#31456b;
+    width: max-content;
+    padding:10px;
 }
 
 table {
@@ -81,7 +126,6 @@ table {
     background-color: #6b92b6;
     text-align:center;
     color:#FFFFFF;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:24px;
     padding: 10px;
 }
@@ -103,4 +147,5 @@ tr {
 
 .allFooter {
     text-align: center;
+    padding:30px;
 }
