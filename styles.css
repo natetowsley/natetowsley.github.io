@@ -1,0 +1,30 @@
+h1 {
+    background-color: #31456b;
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align:center;
+    margin: 0 auto;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #6b92b6;
+}
+
+.row {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.headshot {
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.allFooter {
+    text-align: center;
+}
