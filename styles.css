@@ -7,9 +7,14 @@ h1 {
     color:white;
     text-align:center;
     margin: 0 auto;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-size:(2vw, 7vw);
+    font-style: normal;
+    letter-spacing: 2px;
 }
 
-h3{ 
+#hobbyTitle{ 
     background-color: #6b92b6;
     color:#31456b;
     text-shadow: 0px 0px 4px white;
@@ -39,14 +44,12 @@ nav {
     padding: 10px;
 }
 
-a {
+.navLinks {
     color: #FFFFFF;
     text-shadow: 3px 2px 2px black;
     font-size: 16px;
     background-color: #6b92b6;
-    border-style:solid;
-    border-width: 3px;
-    border-color: #31456b;
+    border:solid 3px #31456b;
     border-radius: 20px;
     padding: 15px;
     margin-right:10px;
@@ -54,7 +57,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.navLinks:hover {
     margin-right:13px;
     margin-left:13px;
     font-size: 14px;
@@ -68,7 +71,6 @@ a:hover {
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
-
 }
 
 .nameplate {
@@ -78,9 +80,7 @@ a:hover {
     color:white;
     margin: 0 auto;
     width:max-content;
-    border:solid;
-    border-width: 3px;
-    border-color:#31456b;
+    border:solid 3px #31456b;
     padding:10px;
     border-radius: 30px;
 }
@@ -93,7 +93,7 @@ a:hover {
     object-fit: cover;
 }
 
-.thanks {
+#thanks {
     text-align: center;
     color:#31456b;
     text-decoration: underline;
@@ -101,7 +101,7 @@ a:hover {
     font-size: 24px;
 }
 
-.quote {
+#quote {
     margin:0 auto;
     margin-top:50px;
     margin-bottom:50px;
@@ -117,8 +117,8 @@ a:hover {
     padding:10px;
 }
 
-table {
-    margin: 15% auto;
+#experienceTable {
+    margin: 5% auto;
     border-radius:30px;
     border:solid;
     border-width: 4px;
@@ -130,15 +130,14 @@ table {
     padding: 10px;
 }
 
+.tableTitles {
+    background-color: #31456b;
+    border-radius:10px;
+}
+
 th {
     padding-right:10px;
     padding-left:10px;
-}
-
-.tableHeading {
-    background-color: #31456b;
-    border-radius:10px;
-
 }
 
 tr {
@@ -150,4 +149,15 @@ tr {
     font-size: 12px;
     padding:30px;
     color:darkgray;
+}
+
+#hobbiesList {
+    text-align: center;
+    list-style-position:inside;
+    color:#31456b;
+}
+
+.hobbies {
+    font-size:16px;
+    margin: 10px;
 }
