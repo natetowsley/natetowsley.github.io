@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team 6</title>
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>How The Web Works</title>
+    <link rel="stylesheet" href="HW1.css">
 </head>
 <body>
     <header>
-        <h1>Team 6</h1>
+        <div class="title_nav">
+            <h1 >How The Web Works</h1>
+            <nav>
+                <a class="navLinks" id="currentPage" href="index.html">Home</a>
+                <a class="navLinks" href="requests_and_responses.html" target="_blank">Requests & Responses</a>
+                <a class="navLinks" href="servers.html" target="_blank">Servers</a>
+                <a class="navLinks" href="cookies.html" target="_blank">Cookies</a>
+            </nav>
+        </div>
+        <hr>
     </header>
-    <hr>
-    <nav>
-        <a class="navLinks" id="currentPage" href="index.html">Home</a>
-        <a class="navLinks" href="about.html" target="_blank">About</a>
-        <a class="navLinks" href="contact.html" target="_blank">Contact</a>
-    </nav>
-    <hr>
+    <h2 id="intro">A Brief Intro</h2>
     <div class="row">
-        <div>
-            <img class="headshot" src="Eric.jpg" width="300" height="200">
-            <br>
-            <p class="nameplate">Eric Rubio Salazar</p>
+        <div class="text_source">
+            <h3 class="topicheading">Clients and Servers</h3>
+            <p class="overview">When you use the web, your device that is connected to the internet
+                is known as the "client", and must communicate with a "server" in what is 
+                similar to a conversation. The client and server make 
+                <a href="requests_and_responses.html" target="_blank">requests and responses</a>, using
+                HTTP protocol to send the correct data to your browser, so you can browse the web as you please.
+                The IP address of a website is how your browser knows where to request information from. 
+                A website's IP address is similar to your address for where you live, but in a much different
+                looking format. The <a href="servers.html" target="_blank">server</a> then must handle this request and 
+                allow the client to download a copy of what is to be displayed.
+            </p>
+            <p class="source">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works?utm_source=google.com#clients_and_servers"
+                 target="_blank"><cite>Mozilla Developer Network</cite></a></p>
         </div>
-        <div>
-            <img class="headshot" src="MiguelC.jpg" width="300" height="200">
-            <br>
-            <p class="nameplate">Miguel Rios</p>
-        </div>
-        <div>
-            <img class="headshot" src="n.jpg" width="300" height="200">
-            <br>
-            <p class="nameplate">Nate Towsley</p>
+        <iframe src="https://www.youtube.com/embed/7_LPdttKXPc?si=45hNxtZWVuHYCfnV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="row">
+            <iframe src="https://www.youtube.com/embed/rdVPflECed8?si=v9mVjWsYe_k17Vy2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="text_source">
+            <h3 class="topicheading">A User To Remember</h3>
+            <p class="overview">So how do websites remember who you are? When you visit a website, you may be asked to "allow cookies"
+                 While I'm a big fan of chocolate chip, this isn't what were talking about. A <a href="cookies.html">session cookie</a> is
+                 a text file that keeps track of your activity on a website. These cookies are only active each time you're on that website, 
+                 and are deleted when you leave your browser. These cookies often make the internet a better experience for most, showing them
+                 things they want to see based on their activity.
+            </p>
+            <p class="source">Source: <a href="https://securiti.ai/blog/session-cookies/?utm_source=google.com"
+                 target="_blank"><cite>Securiti</cite></a></p>
         </div>
     </div>
-    <p id="thanks">Thanks for visiting the site! Feel free to explore and click around as much as you want!</p>
-    <p id="quote"><i>"It does not matter how slowly you go so long as you do not stop"</i><br>- Confucius</p>
-    <footer class="allFooter">
+    <footer>
         <hr>
-        <img src="1743462.png" width="100" height="100">
-        <p>CST-336 Internet Programming 2025c Salazar, Rios, Towsley<br>
-        <strong>Disclaimer:</strong> The information in this webpage is ficticious<br>
-            It is for educational purpuses only.</p>
+        <img src="1743463_white.png" width="100" height="100">
+        <p>CST-336 Internet Programming 2025© Towsley<br>
+        <strong>Disclaimer:</strong> The information on this webpage is for educational purpuses only.</p>
     </footer>
 </body>
 </html>
