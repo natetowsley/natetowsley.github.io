@@ -45,6 +45,13 @@ hr {
     margin: 10px;
 }
 
+.imgs {
+    height: 40%;
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+}
+
 #subtopic {
     margin: 0 auto;
     text-align: center;
@@ -125,4 +132,9 @@ footer {
     border-radius: 90px;
     width: 40%;
     max-width: 850px;
+}
+
+.mark {
+    color: #003A64;
+    background-color:#A9CEE8;
 }
