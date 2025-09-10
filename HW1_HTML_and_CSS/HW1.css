@@ -45,7 +45,7 @@ hr {
     margin: 10px;
 }
 
-#intro {
+#subtopic {
     margin: 0 auto;
     text-align: center;
     border:solid 3px #003A64;
@@ -80,6 +80,24 @@ hr {
     border-radius: 40px;
 }
 
+.fullwidth_source {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    background-color: #54A2D2;
+    box-shadow: 8px 6px 2px #003A64;
+    padding: 2%;
+    border-radius: 40px;
+}
+
+.youtube {
+    border-radius: 10px;
+    box-shadow: 8px 6px 2px #003A64;
+    width: 45%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
 .source {
     background-color: #A9CEE8;
     border: solid 3px #003A64;
@@ -90,7 +108,21 @@ hr {
     width:fit-content;
 }
 
+.inlineLink {
+    text-decoration:none;
+}
+
 footer {
     margin: 0 auto;
     text-align:center;
+}
+
+.bigtext {
+    font-size:26px;
+}
+
+#httpgif {
+    border-radius: 90px;
+    width: 40%;
+    max-width: 850px;
 }
