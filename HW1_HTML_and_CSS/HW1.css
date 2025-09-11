@@ -13,6 +13,7 @@ body {
 
 h1 {
     text-shadow: 0px 0px 4px #003A64;
+    font-size:40px;
 }
 
 nav {
@@ -46,10 +47,12 @@ hr {
 }
 
 .imgs {
-    height: 40%;
-    width: 40%;
+    height: auto;
+    width: 30%;
     margin: 0 auto;
     display: block;
+    border-radius: 70px;
+    box-shadow: 8px 6px 2px #003A64;
 }
 
 #subtopic {
@@ -100,9 +103,10 @@ hr {
 .youtube {
     border-radius: 10px;
     box-shadow: 8px 6px 2px #003A64;
-    width: 45%;
+    width: 40%;
     aspect-ratio: 16 / 9;
     height: auto;
+    border: none;
 }
 
 .source {
@@ -128,13 +132,7 @@ footer {
     font-size:26px;
 }
 
-#httpgif {
-    border-radius: 90px;
-    width: 40%;
-    max-width: 850px;
-}
-
-.mark {
-    color: #003A64;
+mark {
+    color: black;
     background-color:#A9CEE8;
 }
