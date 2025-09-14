@@ -1,0 +1,30 @@
+body{
+    color:white;
+    background-image: url("/Lab2_Guessing_Game/numbers-wallpaper-3554x1999.jpg");
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+.box {
+    background-color: blueviolet;
+    padding:20px;
+    border-radius:30px;
+    box-shadow: 3px 2px 3px black;    
+    width:max-content;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#guessBox {
+    font-size: 26px;
+    background-color: white;
+    border-radius:10px;
+}
+
+#guessBtn {
+    font-size:26px;
+    color:blueviolet;
+    background-color: white;
+    border-radius:10px;
+}
