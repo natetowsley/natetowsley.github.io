@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 2: Guess the Number!</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <h1 class="box" >Guess the Number!</h1>
-    </header>
+<html>
+    <head>
+        <title> Guess a Number </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
 
-    <input id="guessBox"type="text" size="3">
-
-    <button id="guessBtn">Guess!</button>
-    
-    <br>
-
-    <h2 class = "box" id="feedback">Guess a number between 1 and 99</h2>
-
-    <br>
-
-    <div>
-        <h3 class="box" id="guesses">Previous Guesses: </h3>
-    </div>
-    <script src="js/script.js"></script>
-</body>
+            <header>
+                <h1 class="box">Guess the Number!</h1>
+                <h2 class="box">Guess a number between 1 and 99 <br> in seven attempts!</h2>
+            </header>
+            <br>
+            <div class="box" id="main">
+            Enter a guess: 
+            <input type="text" id="playerGuess" size="5">         
+            <button class="button" id="guessBtn" style="display: inline;"> Guess </button> <br>
+            <button class="button" id="resetBtn" style="display: none;"> Play Again! </button> 
+            <div id="feedback"></div>
+            <div> Previous Guesses: 
+                    <span id="guesses"></span>
+            </div>
+            </div>
+            
+            <script src="js/script.js"></script>
+        
+    </body>
 </html>

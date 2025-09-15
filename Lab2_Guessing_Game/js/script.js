@@ -1,34 +1,70 @@
-//Event listeners
-document.querySelector("#guessBtn").addEventListener("click", guess);
+//Event Listeners
+document.querySelector("#guessBtn").addEventListener("click", checkGuess);
+document.querySelector("#resetBtn").addEventListener("click", initializeGame);
 
-//Global Variables
-let answer = Math.floor(Math.random() * 99) + 1;
-let guesses = 0;
-let numWins = 0;
+//Global variables
+let randomNumber;
+let attempts = 0;
+initializeGame();
 
-console.log(answer);
+function initializeGame() {
+   randomNumber = Math.floor(Math.random() * 99) + 1;
+   console.log("Random number:" + randomNumber);
+   attempts = 0;
 
-function guess() {
-    let userGuess = document.querySelector("#guessBox").value;
-    guesses++;
-    if (guesses > 7) {
-        document.querySelector("#feedback").textContent = `Out of Guesses!`;
-        return;
-    }
-    // alert(userGuess);
-    // document.querySelector("#guesses").textContent += userGuess + " ";
-   document.querySelector("#guesses").textContent += `${userGuess} `;
-   if (userGuess < answer) {
-    document.querySelector("#feedback").textContent = `${userGuess} is too low!`;
-    document.querySelector("#feedback").style.color="red";
-   }
-   else if(userGuess > answer) {
-    document.querySelector("#feedback").textContent = `${userGuess} is too high!`;
-    document.querySelector("#feedback").style.color="red";
-   }
-   else{
-    document.querySelector("#feedback").textContent =`${userGuess} Correct!`;
-    document.querySelector("#feedback").style.color="#16f551";
-   }
+   //hiding the Reset button
+   document.querySelector("#resetBtn").style.display = "none";
+
+   //showing the Guess button
+   document.querySelector("#guessBtn").style.display = "inline";
+
+   let playerGuess = document.querySelector("#playerGuess"); 
+   playerGuess.focus(); //adding focus to textbox
+   playerGuess.value = "";  //clearing the textbox
+
+   let feedback = document.querySelector("#feedback");
+   feedback.textContent = "";  //clearing the feedback
+
+   //clearing previous guesses
+   document.querySelector("#guesses").textContent = "";
 }
+
+function checkGuess(){
+    let feedback = document.querySelector("#feedback");
+    feedback.textContent = "";
+    let guess = document.querySelector("#playerGuess").value;
+    console.log("Player guess: " + guess);
+    if (guess < 1 || guess > 99 || isNaN(guess)) {   
+        feedback.textContent = "Enter a number between 1 and 99";
+        feedback.style.color = "red";
+        return;
+    }   
+    attempts++;  
+    console.log("Attempts:" + attempts);
+    feedback.style.color = "orange";   
+    if (guess == randomNumber) {
+            feedback.textContent = "You guessed it! You Won!";
+            feedback.style.color = "lightgreen";
+            gameOver();
+    } else { 
+        document.querySelector("#guesses").textContent += guess + " ";
+        if (attempts == 7) {
+        feedback.textContent = "Sorry, you lost!";
+        feedback.style.color = "red"; 
+        gameOver();
+        } else if ( guess > randomNumber) {
+            feedback.textContent = "Guess was high";
+        } else {
+            feedback.textContent = "Guess was low";
+        }
+    }
+}
+
+function gameOver(){
+    let guessBtn = document.querySelector("#guessBtn");
+    let resetBtn = document.querySelector("#resetBtn");
+    guessBtn.style.display = "none"; //hides Guess button
+    resetBtn.style.display = "inline"; //displays Reset button
+}
+
 
