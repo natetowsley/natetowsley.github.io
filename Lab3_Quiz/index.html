@@ -12,16 +12,17 @@
 
 
     <div class="qbox">
-        1. How many points is a touchdown? <br>
+        <p class="question">1. How many points is a touchdown?</p> <br>
         <label>
-            <input id="numInput" type="number" min="0">
+            <input id="numInput" type="number" min="0" value="0">
         </label>
     </div>
     <br>
     <div class="qbox">
-                2. Who had the number 1 pick in this year's draft? <br>
+                <p class="question">2. Who had the number 1 pick in this year's draft?</p> <br>
         <label>
             <select id="answer2">
+                <option value=""></option>
                 <option value="Bears">Bears</option>
                 <option value="Titans">Titans</option>
                 <option value="Jaguars">Jaguars</option>
@@ -31,21 +32,27 @@
     </div>
     <br>
     <div class="qbox">
-        3. Who won SuperBolw LVIII (last year)<br>
+        <p class="question">3. Who won SuperBolw LVIII (last year)?</p><br>
         <div id="q3Options">
         
         </div>
     </div>
     <br>
     <div class="qbox">
-        4. What does NFL stand for? <br>
-        <input id="textInput" type="text" placeholder="Answer here">
+        <p class="question">4. What does NFL stand for?</p> <br>
+        <input id="textInput" type="text" placeholder="Answer here" value="">
     </div>
-    <br><br>
-    <button id="submitBtn">Submit Quiz</button>
-    <div id="score">
+    <br>
+    <div class="qbox">
+        <p class="question">5. Which teams are from California?</p><br>
+        <div id="q5Options">
         
+        </div>
     </div>
+    <br>
+    <button id="submitBtn">Submit Quiz</button>
+    <br>
+    <h2 id="score" style="display: none"></h2>
     <script src="js/script.js"></script>
 </body>
 </html>
