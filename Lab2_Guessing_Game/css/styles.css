@@ -32,3 +32,10 @@ body{
     border-radius:10px;
     padding:8px;
 }
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 3px 2px black;
+    transition: transform 0.2s ease-in-out, box-shadow .4s ease-out;
+    cursor: pointer;
+}

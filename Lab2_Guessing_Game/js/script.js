@@ -5,6 +5,9 @@ document.querySelector("#resetBtn").addEventListener("click", initializeGame);
 //Global variables
 let randomNumber;
 let attempts = 0;
+let gamesWon = 0;
+let gamesLost = 0;
+
 initializeGame();
 
 function initializeGame() {
@@ -45,12 +48,16 @@ function checkGuess(){
     if (guess == randomNumber) {
             feedback.textContent = "You guessed it! You Won!";
             feedback.style.color = "lightgreen";
+            gamesWon++;
+            updateRecord();
             gameOver();
     } else { 
         document.querySelector("#guesses").textContent += guess + " ";
         if (attempts == 7) {
-        feedback.textContent = "Sorry, you lost!";
+        feedback.textContent = "Sorry, you lost! Then number was: " + randomNumber;
         feedback.style.color = "red"; 
+        gamesLost++;
+        updateRecord();
         gameOver();
         } else if ( guess > randomNumber) {
             feedback.textContent = "Guess was high";
@@ -65,6 +72,10 @@ function gameOver(){
     let resetBtn = document.querySelector("#resetBtn");
     guessBtn.style.display = "none"; //hides Guess button
     resetBtn.style.display = "inline"; //displays Reset button
+}
+
+function updateRecord() {
+    document.querySelector("#record").textContent = "Record: " + gamesWon + "W - " + gamesLost + "L";
 }
 
 
