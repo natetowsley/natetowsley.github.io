@@ -7,6 +7,15 @@ body{
     font-size: 18px;
 }
 
+#attemptCount {
+    text-align: left;
+    margin-left: 20px;
+    background-color: rgb(0, 0, 73);
+    width: max-content;
+    padding:6px;
+    border-radius: 10px;
+}
+
 h1 {
     background-color: rgb(0, 0, 73);
     border-radius: 10px;

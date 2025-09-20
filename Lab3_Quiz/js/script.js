@@ -5,7 +5,6 @@ document.querySelector("#submitBtn").addEventListener("click", gradeQuiz);
 displayQ3Options();
 displayQ5Options();
 
-
 function displayQ3Options() {
 let q3Options = ["Chiefs", "49ers", "Eagles", "Lakers"];
     q3Options = _.shuffle(q3Options);
@@ -49,6 +48,10 @@ function gradeQuiz() {
     console.log(answer1);
     if (answer1 == 6) {
         score+= 20;
+        document.querySelector("#check1").textContent = "✅ Correct!";
+    }
+    else {
+        document.querySelector("#check1").textContent = "❌ Incorrect!";
     }
 
 
@@ -56,21 +59,35 @@ function gradeQuiz() {
     console.log(answer2);
     if(answer2 == "Titans"){
         score+= 20;
+        document.querySelector("#check2").textContent = "✅ Correct!";
     }
-    
+    else {
+        document.querySelector("#check2").textContent = "❌ Incorrect!";
+    }
+
 
     let answer3 = document.querySelector("input[name=q3]:checked").value;
     console.log(answer3);
     if (answer3 == "Eagles") {
         score+=20;
+        document.querySelector("#check3").textContent = "✅ Correct!";
     }
+    else {
+        document.querySelector("#check3").textContent = "❌ Incorrect!";
+    }
+
     
 
     let answer4 = document.querySelector("#textInput").value;
     console.log(answer4);
     if (answer4 == "National Football League") {
         score+= 20;
+        document.querySelector("#check4").textContent = "✅ Correct!";
     }
+    else {
+        document.querySelector("#check4").textContent = "❌ Incorrect!";
+    }
+
 
     console.log(document.querySelector("#q549ers").checked);
     console.log(document.querySelector("#q5Cardinals").checked);
@@ -83,11 +100,18 @@ function gradeQuiz() {
         document.querySelector("#q5Rams").checked &&
         document.querySelector("#q5Chargers").checked &&
         !document.querySelector("#q5Seahawks").checked) {
-            score+= 20;
-        }
+        score+= 20;
+        document.querySelector("#check5").textContent = "✅ Correct!";
+    }
+    else {
+        document.querySelector("#check5").textContent = "❌ Incorrect!";
+    }
+
 
 
     document.querySelector("#score").textContent = score + "/100";
+    if (score >= 80) {
+        document.querySelector("#score").textContent += " Congrats, you passed!";
+    }
     document.querySelector("#score").style.display = "inline";
-    
 }
