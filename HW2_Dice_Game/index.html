@@ -14,31 +14,57 @@
         <h1 class="title">Dice Game</h1>
         <hr>
     </header>
-    <div id="house">
-        <h2 id="houseName">House</h2>
-        <div class="diceRow">
-            <img class="diceImg" id="DD1" src="img\red_dice\r5.png" alt="House Dice 1">
-            <img class="diceImg" id="DD2" src="img\red_dice\r3.png" alt="House Dice 2">
+    <div class="layout">
+        <div id="invisible">
+            
         </div>
-        <p class="gameInfo">House game info</p>
-    </div>
-    <br>
-    <h3 id="balance">Balance: </h3>
-    <div id="controls">
-        <button id="rollBtn">Roll Dice</button>
-        <div id="betControls">
-            <button id="betUp">Bet +10</button>
-            <button id="betDown">Bet -10</button>
+        <div id="mainContent">
+            <div id="house">
+                <h2 id="houseName">House</h2>
+                <div class="diceRow">
+                    <img class="diceImg" id="DD1" src="img\red_dice\r5.png" alt="House Dice 1">
+                    <img class="diceImg" id="DD2" src="img\red_dice\r3.png" alt="House Dice 2">
+                </div>
+                <p id="houseInfo" class="gameInfo">House game info</p>
+            </div>
+            <br>
+            <h3 id="balance">Balance: </h3>
+            <div class="row">
+                <div id="controls">
+                    <button id="rollBtn">Roll Dice</button>
+                    <div id="betControls">
+                        <button id="betUp">Bet +$10</button>
+                        <button id="betDown">Bet -$10</button>
+                    </div>
+                    <div id="betView">
+                        <h2 id="betText">$10</h3>
+                        <div id="chips">
+                            <img id="betImg" src="img/chip.png">
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <br>    
+            <div id="player">
+                <p id="playerInfo" class="gameInfo">Player game info</p>
+                <div class="diceRow">
+                    <img class="diceImg" id="PD1" src="img\white_dice\w5.png" alt="Player Dice 1">
+                    <img class="diceImg" id="PD2" src="img\white_dice\w3.png" alt="Player Dice 2">            
+                </div>
+                <h2 id="playName">Player</h2>
+            </div>
         </div>
-    </div>
-    <br>    
-    <div id="player">
-        <p class="gameInfo">Player game info</p>
-        <div class="diceRow">
-            <img class="diceImg" id="PD1" src="img\white_dice\w5.png" alt="Player Dice 1">
-            <img class="diceImg" id="PD2" src="img\white_dice\w3.png" alt="Player Dice 2">            
-        </div>
-        <h2 id="playName">Player</h2>
+        <aside>
+            <h2>Instructions</h2>
+            <ul id="instructions">
+                <li>You begin each game with a balance of $100</li>
+                <li>Before each roll, you are allowed to wager any amount $10 and above, if you can afford it</li>
+                <li>Once you choose roll dice, whoever has the higher total, the house or the player, wins the round</li>
+                <li>If you win, you get your money back plus whatever you wagered</li>
+                <li>If you lose, you lose whatever you wagered</li>
+                <li>You can play as long as you like, but can't cash out, as this is just an assignment in a class, and I can't afford to pay out winners</li>
+            </ul>
+        </aside>
     </div>
     <br>
     <footer>
@@ -46,5 +72,6 @@
         <p class="footerText">CST-336 Internet Programming 2025© Towsley<br>
         <strong class="footerText">Disclaimer:</strong> This webpage is for educational purposes only.</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

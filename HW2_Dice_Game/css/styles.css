@@ -100,6 +100,7 @@ hr {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 button {
@@ -141,7 +142,54 @@ button:active {
     background-color: red;
 }
 
+#betImg {
+    width: 80px;
+    margin-top: 20px;
+}
+
+#betText {
+    margin:0;
+    border:solid 4px black;
+    border-radius: 30px;
+    color: black;
+    background-color: white;
+}
+
 .footerText {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 11.2px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#mainContent {
+    width: 100%;
+}
+
+aside {
+    position: absolute;
+    right: 4%;
+    top: 20px;
+    width: 325px;
+    border: dotted 3px black;
+    height: 550px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: green;
+}
+
+li {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:15px;
 }
