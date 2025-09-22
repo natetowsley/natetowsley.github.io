@@ -5,12 +5,11 @@ on window resize found here:
 */
 
 // event listeners
-window.addEventListener("resize", toggleAside); 
+window.addEventListener("resize", toggleAside);
+document.querySelector("#rollBtn").addEventListener("click", playRound);
 
 // global variables
 let balance = 0;
-let playerDice = ["w1", "w2", "w3", "w4", "w5", "w6"];
-let houseDice = ["r1", "r2", "r3", "r4", "r5", "r6"];
 
 // initial function call
 startNewGame();
@@ -36,15 +35,22 @@ function toggleAside() {
 }
 
 function playRound() {
-    
+    // roll all dice
+    let houseRolls = [diceRoll(), diceRoll()];
+    let houseScore = houseRolls[0] + houseRolls[1];
+    let playerRolls = [diceRoll(), diceRoll()];
+    let playerScore = playerRolls[0] + playerRolls[1];
+
+    document.querySelector("#HD1").src = "img/red_dice/r" + houseRolls[0] + ".png";
+    document.querySelector("#HD2").src = "img/red_dice/r" + houseRolls[1] + ".png";
+
+    document.querySelector("#PD1").src = "img/white_dice/w" + playerRolls[0] + ".png";
+    document.querySelector("#PD2").src = "img/white_dice/w" + playerRolls[1] + ".png";
+
 }
 
-function playerRoll() {
-    let index = Math.floor(Math.random() * 6);
-    return playerDice[index];
-}
-
-function houseRoll() {
-    let index = Math.floor(Math.random() * 6);
-    return houseDice[index];
+function diceRoll() {
+    let roll = Math.floor(Math.random() * 6) + 1;
+    console.log(roll);
+    return roll;
 }
