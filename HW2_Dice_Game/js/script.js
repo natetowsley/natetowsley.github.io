@@ -9,6 +9,7 @@ window.addEventListener("resize", toggleAside);
 document.querySelector("#rollBtn").addEventListener("click", playRound);
 document.querySelector("#betUp").addEventListener("click", raiseBet);
 document.querySelector("#betDown").addEventListener("click", lowerBet);
+document.querySelector("#playAgain").addEventListener("click", startNewGame);
 
 // global variables
 let balance = 0;
@@ -19,6 +20,7 @@ startNewGame();
 toggleAside();
 
 function startNewGame() {
+    resetControls();
     balance = 100;
 
     // set default text content
@@ -87,10 +89,31 @@ function playRound() {
         bet = balance;
         document.querySelector("#betText").textContent = `$${bet}`;
     }
+
+    if (balance == 0) {
+        document.querySelector("#balance").textContent = `Game Over`;
+        document.querySelector("#rollBtn").style.display = "none";
+        document.querySelector("#betUp").style.display = "none";
+        document.querySelector("#betDown").style.display = "none";
+        document.querySelector("#betImg").style.display = "none";
+        document.querySelector("#betText").style.display = "none";
+        document.querySelector("#playAgain").style.display = "inline";
+
+    }
 }
 
 function diceRoll() {
     let roll = Math.floor(Math.random() * 6) + 1;
     console.log(roll);
     return roll;
+}
+
+function resetControls() {
+    document.querySelector("#balance").textContent = `Game Over`;
+        document.querySelector("#rollBtn").style.display = "inline";
+        document.querySelector("#betUp").style.display = "inline";
+        document.querySelector("#betDown").style.display = "inline";
+        document.querySelector("#betImg").style.display = "inline";
+        document.querySelector("#betText").style.display = "block";
+        document.querySelector("#playAgain").style.display = "none";
 }
