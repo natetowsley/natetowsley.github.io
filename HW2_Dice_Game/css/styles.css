@@ -70,6 +70,10 @@ hr {
     border-radius: 15px;
 }
 
+#matchResponse {
+    font-size:24px;
+}
+
 #balance {
     background-color: rgb(0, 0, 0);
     color:gold;

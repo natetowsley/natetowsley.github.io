@@ -7,9 +7,12 @@ on window resize found here:
 // event listeners
 window.addEventListener("resize", toggleAside);
 document.querySelector("#rollBtn").addEventListener("click", playRound);
+document.querySelector("#betUp").addEventListener("click", raiseBet);
+document.querySelector("#betDown").addEventListener("click", lowerBet);
 
 // global variables
 let balance = 0;
+let bet = 10;
 
 // initial function call
 startNewGame();
@@ -34,6 +37,20 @@ function toggleAside() {
     }
 }
 
+function raiseBet() {
+    if (bet < balance) {
+        bet+= 10;
+        document.querySelector("#betText").textContent = `$${bet}`;
+    }
+}
+
+function lowerBet() {
+    if (bet > 10) {
+        bet-= 10;
+        document.querySelector("#betText").textContent = `$${bet}`;    
+    } 
+}
+
 function playRound() {
     // roll all dice
     let houseRolls = [diceRoll(), diceRoll()];
@@ -47,6 +64,29 @@ function playRound() {
     document.querySelector("#PD1").src = "img/white_dice/w" + playerRolls[0] + ".png";
     document.querySelector("#PD2").src = "img/white_dice/w" + playerRolls[1] + ".png";
 
+    // Display scores and who won
+    document.querySelector("#houseInfo").textContent = "House rolled " + houseScore + "!";
+    document.querySelector("#playerInfo").textContent = "You rolled " + playerScore + "!";
+    // Balance logic for win or loss
+    if (playerScore > houseScore) {
+        let winnings = bet;
+        balance += winnings;
+        document.querySelector("#matchResponse").textContent = "You Win! Won $" + winnings;
+    }
+    else if (houseScore > playerScore) {
+        document.querySelector("#matchResponse").textContent = "You lost :(";
+        balance-= bet;
+    }
+    else {
+        document.querySelector("#matchResponse").textContent = "Draw! No winners!!";
+    }
+
+    // update balance text
+    document.querySelector("#balance").textContent = `Balance: $${balance}`;
+    if (bet > balance) {
+        bet = balance;
+        document.querySelector("#betText").textContent = `$${bet}`;
+    }
 }
 
 function diceRoll() {
