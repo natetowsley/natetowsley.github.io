@@ -67,7 +67,7 @@ function raiseBet() {
 function lowerBet() {
     if (bet > 10) {
         bet-= 10;
-                if (bet < 50) {
+        if (bet < 50) {
             document.querySelector("#betImg").src = "img/chip.png";
         }
         else if (bet < 100) {
