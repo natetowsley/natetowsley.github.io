@@ -29,6 +29,7 @@ function startNewGame() {
     document.querySelector("#houseInfo").textContent = "";
     document.querySelector("#playerInfo").textContent = "";
     document.querySelector("#betText").textContent = `$${bet}`;
+    document.querySelector("#betImg").src = "img/chip.png";
 }
 
 function toggleAside() {
@@ -44,6 +45,21 @@ function toggleAside() {
 function raiseBet() {
     if (bet < balance) {
         bet+= 10;
+        if (bet < 50) {
+            document.querySelector("#betImg").src = "img/chip.png";
+        }
+        else if (bet < 100) {
+            document.querySelector("#betImg").src = "img/chip2.png";
+        }
+        else if (bet < 150) {
+            document.querySelector("#betImg").src = "img/chip3.png";
+        }
+        else if (bet < 250) {
+            document.querySelector("#betImg").src = "img/chip4.png";
+        }
+        else {
+            document.querySelector("#betImg").src = "img/chip5.png";
+        }
         document.querySelector("#betText").textContent = `$${bet}`;
     }
 }
@@ -51,6 +67,21 @@ function raiseBet() {
 function lowerBet() {
     if (bet > 10) {
         bet-= 10;
+                if (bet < 50) {
+            document.querySelector("#betImg").src = "img/chip.png";
+        }
+        else if (bet < 100) {
+            document.querySelector("#betImg").src = "img/chip2.png";
+        }
+        else if (bet < 150) {
+            document.querySelector("#betImg").src = "img/chip3.png";
+        }
+        else if (bet < 250) {
+            document.querySelector("#betImg").src = "img/chip4.png";
+        }
+        else {
+            document.querySelector("#betImg").src = "img/chip5.png";
+        }
         document.querySelector("#betText").textContent = `$${bet}`;    
     } 
 }
