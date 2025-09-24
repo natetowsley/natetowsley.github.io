@@ -22,11 +22,13 @@ toggleAside();
 function startNewGame() {
     resetControls();
     balance = 100;
+    bet = 10;
 
     // set default text content
     document.querySelector("#balance").textContent = "Balance: $" + balance;
     document.querySelector("#houseInfo").textContent = "";
     document.querySelector("#playerInfo").textContent = "";
+    document.querySelector("#betText").textContent = `$${bet}`;
 }
 
 function toggleAside() {
