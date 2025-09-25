@@ -45,7 +45,7 @@ let q5Options = ["49ers","Cardinals","Rams","Chargers","Seahawks"];
 function gradeQuiz() {
     let score = 0;
     let answer1 = document.querySelector("#numInput").value;
-    console.log(answer1);
+    console.log(`Q1: ${answer1}`);
     if (answer1 == 6) {
         score+= 20;
         document.querySelector("#check1").textContent = "✅ Correct!";
@@ -54,9 +54,8 @@ function gradeQuiz() {
         document.querySelector("#check1").textContent = "❌ Incorrect!";
     }
 
-
     let answer2 = document.querySelector("#answer2").value;
-    console.log(answer2);
+    console.log(`Q2: ${answer2}`);
     if(answer2 == "Titans"){
         score+= 20;
         document.querySelector("#check2").textContent = "✅ Correct!";
@@ -65,9 +64,13 @@ function gradeQuiz() {
         document.querySelector("#check2").textContent = "❌ Incorrect!";
     }
 
-
-    let answer3 = document.querySelector("input[name=q3]:checked").value;
-    console.log(answer3);
+    let answer3;
+    try {
+        answer3 = document.querySelector("input[name=q3]:checked").value;
+    }catch(noAnswer) {
+        answer3 = "";
+    }
+    console.log(`Q3: ${answer3}`);
     if (answer3 == "Eagles") {
         score+=20;
         document.querySelector("#check3").textContent = "✅ Correct!";
@@ -76,10 +79,8 @@ function gradeQuiz() {
         document.querySelector("#check3").textContent = "❌ Incorrect!";
     }
 
-    
-
     let answer4 = document.querySelector("#textInput").value;
-    console.log(answer4);
+    console.log(`Q4: ${answer4}`);
     if (answer4 == "National Football League") {
         score+= 20;
         document.querySelector("#check4").textContent = "✅ Correct!";
@@ -88,12 +89,11 @@ function gradeQuiz() {
         document.querySelector("#check4").textContent = "❌ Incorrect!";
     }
 
-
-    console.log(document.querySelector("#q549ers").checked);
-    console.log(document.querySelector("#q5Cardinals").checked);
-    console.log(document.querySelector("#q5Rams").checked);
-    console.log(document.querySelector("#q5Chargers").checked);
-    console.log(document.querySelector("#q5Seahawks").checked);
+    console.log(`Q5: ${document.querySelector("#q549ers").checked}\n
+    ${document.querySelector("#q5Cardinals").checked}\n
+    ${document.querySelector("#q5Rams").checked}\n
+    ${document.querySelector("#q5Chargers").checked}\n
+    ${document.querySelector("#q5Seahawks").checked}`);
 
     if (document.querySelector("#q549ers").checked &&
         !document.querySelector("#q5Cardinals").checked &&
