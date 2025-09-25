@@ -93,7 +93,7 @@ function gradeQuiz() {
 
     let answer4 = document.querySelector("#textInput").value;
     console.log(`Q4: ${answer4}`);
-    if (answer4 == "National Football League") {
+    if (answer4.toLowerCase() == "national football league") {
         score+= 20;
         document.querySelector("#check4").textContent = "✅ Correct!";
     }
