@@ -5,7 +5,12 @@ document.querySelector("#submitBtn").addEventListener("click", gradeQuiz);
 let attempts = localStorage.getItem("totalAttempts");
 
 // shuffle option function calls
-document.querySelector("#attemptCount").textContent = `Quiz attempts: ${attempts}`;
+if (attempts == null) {
+document.querySelector("#attemptCount").textContent = `Quiz attempts: 0`;
+}
+else {
+    document.querySelector("#attemptCount").textContent = `Quiz attempts: ${attempts}`;
+}
 displayQ3Options();
 displayQ5Options();
 
