@@ -1,7 +1,11 @@
 // event listeners
 document.querySelector("#submitBtn").addEventListener("click", gradeQuiz);
 
+// global variables
+let attempts = localStorage.getItem("totalAttempts");
+
 // shuffle option function calls
+document.querySelector("#attemptCount").textContent = `Quiz attempts: ${attempts}`;
 displayQ3Options();
 displayQ5Options();
 
@@ -43,6 +47,9 @@ let q5Options = ["49ers","Cardinals","Rams","Chargers","Seahawks"];
 }
 
 function gradeQuiz() {
+    document.querySelector("#attemptCount").textContent = `Quiz attempts: ${++attempts}`;
+    localStorage.setItem("totalAttempts", attempts);
+
     let score = 0;
     let answer1 = document.querySelector("#numInput").value;
     console.log(`Q1: ${answer1}`);
