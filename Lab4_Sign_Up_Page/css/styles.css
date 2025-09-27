@@ -25,20 +25,27 @@ fieldset {
 input {
     margin: 5px;
     background-color: #a3cef1;
+    color:#274c77;
 }
 
 select {
     background-color: #a3cef1;
+    color:#274c77;
+}
+
+option {
+    color:#274c77;
 }
 
 #signUpBtn {
     border-radius: 8px;
     background-color: #274c77;
+    color:#e7ecef;
 }
 
 #signUpBtn:hover {
     background-color: #346196;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     cursor: pointer;
-    transition: background-color 0.1s ease-out, transition .05 ease-out;
+    transition: background-color 0.1s ease-out, transition .2s ease-out;
 }
