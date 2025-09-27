@@ -4,8 +4,11 @@ document.querySelector("#state").addEventListener("change", displayCounties);
 document.querySelector("#pass").addEventListener("click", suggestPassword);
 document.querySelector("#username").addEventListener("change", isAvailable);
 document.querySelector("#signUpBtn").addEventListener("click", checkPassword);
+document.querySelector("#signUpBtn").addEventListener("click", checkUsername);
 
 displayStates();
+
+let validUsername;
 
 async function displayCity() {
     let zipCode = document.querySelector("#zip").value;
@@ -18,6 +21,9 @@ async function displayCity() {
             console.log(data);
             if (data == false) {
                 document.querySelector("#validZip").textContent = "No City found. Invalid Zip Code.";
+                document.querySelector("#city").textContent = "";
+                document.querySelector("#lat").textContent = "";
+                document.querySelector("#lon").textContent = "";
             }
             else {
                 document.querySelector("#validZip").textContent = "";
@@ -102,6 +108,11 @@ async function suggestPassword() {
 
 async function isAvailable() {
     let name = document.querySelector("#username").value;
+    // if (name.length < 3) {
+    //     document.querySelector("#available").textContent = "Username must be 3 characters or longer!";
+    //     document.querySelector("#available").style.color = "red";
+    //     return;
+    // }
     let url = "https://csumb.space/api/usernamesAPI.php?username=" + name;
     try {
         let response = await fetch(url);
@@ -111,10 +122,12 @@ async function isAvailable() {
             if (data.available == true) {
                 document.querySelector("#available").textContent = "Username is available!";
                 document.querySelector("#available").style.color = "green";
+                validUsername = true;
             }
             else {
                 document.querySelector("#available").textContent = "Username is NOT available!";
                 document.querySelector("#available").style.color = "red";
+                validUsername = false;
             }
         } catch (error) {
             console.log("Parsing error: " + error);
@@ -130,15 +143,33 @@ function checkPassword() {
     let confirm = document.querySelector("#confirm").value;
 
     if (pass.length < 6) {
-        document.querySelector("#feedback").textContent = "Password must be 6 characters or longer!";
-        document.querySelector("#feedback").style.color = "red";
+        document.querySelector("#pass-feedback").textContent = "Password must be 6 characters or longer!";
+        document.querySelector("#pass-feedback").style.color = "red";
     }
     else if (pass !== confirm) {
-        document.querySelector("#feedback").textContent = "Passwords do not match!";
-        document.querySelector("#feedback").style.color = "red";
+        document.querySelector("#pass-feedback").textContent = "Passwords do not match!";
+        document.querySelector("#pass-feedback").style.color = "red";
     }
     else {
-        document.querySelector("#feedback").textContent = "";
+        document.querySelector("#pass-feedback").textContent = ""
+        return true;
     }
+}
 
+function checkUsername() {
+    let username = document.querySelector("#username").value
+    if (username.length < 3) {
+        document.querySelector("#username-feedback").textContent = "Username must be 3 characters or longer";
+        document.querySelector("#username-feedback").style.color = "red";
+        return;
+    }
+    else if (!validUsername) {
+        document.querySelector("#username-feedback").textContent = "Username is taken!";
+        document.querySelector("#username-feedback").style.color = "red";
+        return;
+    }
+    else {
+        document.querySelector("#username-feedback").textContent = "";
+        return true;
+    }
 }
