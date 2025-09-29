@@ -9,10 +9,11 @@ body {
 
 h1 {
     color: #e7ecef;
+    font-size: 28px;
 }
 
 fieldset {
-    width: 40%;
+    width: 30%;
     margin: 0 auto;
     text-align: left;
     border: solid 2px #e7ecef;
@@ -20,6 +21,7 @@ fieldset {
     padding: 15px;
     background-color:#6096ba;
     color: #e7ecef;
+    font-size: 12px;
 }
 
 input {
@@ -32,6 +34,7 @@ input {
 select {
     background-color: #a3cef1;
     color:#274c77;
+    width: 40%;
 }
 
 option {
