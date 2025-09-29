@@ -26,6 +26,7 @@ input {
     margin: 5px;
     background-color: #a3cef1;
     color:#274c77;
+    width: 40%;
 }
 
 select {
